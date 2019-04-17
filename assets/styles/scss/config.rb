@@ -5,5 +5,6 @@ images_dir = "../img"
 javascripts_dir = "../js"
 environment = :development
 relative_assets = true
-output_style = :expanded
+output_style = :compressed
 preferred_syntax = :scss
+
