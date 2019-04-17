@@ -24,7 +24,7 @@
    <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <?php get_template_part( 'parts/home', 'nav' ); ?>
+    <?php get_template_part( 'parts/page', 'header'); ?>
+    <?php get_template_part( 'parts/page', 'navbar' ); ?>
         
   
