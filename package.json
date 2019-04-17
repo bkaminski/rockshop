@@ -1,0 +1,28 @@
+{
+  "name": "rockshop",
+  "version": "0.1.1",
+  "description": "Custom WordPress theme for The Rockshop",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkaminski/rockshop.git"
+  },
+  "keywords": [
+    "Rockshop",
+    "Musical Venue",
+    "Live Music",
+    "Soundroom"
+  ],
+  "author": "Ben Kaminski",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/bkaminski/rockshop/issues"
+  },
+  "homepage": "https://github.com/bkaminski/rockshop#readme",
+  "dependencies": {
+    "sass": "^1.18.0"
+  }
+}
