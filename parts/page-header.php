@@ -1,4 +1,4 @@
-<div class="container-lg header-contain">
+<header class="container-lg header-contain">
 	
-</div>
+</header>
 		

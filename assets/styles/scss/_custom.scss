@@ -14,3 +14,78 @@ background-image: url('../img/rockshop-web-logo.png');
 background-repeat: no-repeat;
 background-position: center;
 }
+#s.form-control {
+border-radius: 0px;
+}
+.main-list {
+background: #999;
+}
+.event-info {
+background: #CCC;
+min-height: 200px;
+padding: 10px;
+}
+.event-img {
+background: #999;
+min-height: 200px;
+padding: 10px;
+}
+.event-date {
+background: #fff;
+min-height: 200px;
+padding: 10px;
+}
+.event-foot {
+width: $full;
+height: 40px;
+transform: skew(-25deg);
+-webkit-transform: skew(-25deg);
+-moz-transform: skew(-25deg);
+-o-transform: skew(-25deg);
+background: #e9ecef;
+text-align:center;
+color:#fff;
+font-size:20px;
+line-height:5.2;
+margin-left: -10px;
+}
+.main-event-right {
+background: #e9ecef;
+min-height: 150px;
+width: $full;
+padding: $m_big;
+}
+.main-event-foot-right {
+width: $full;
+height: 40px;
+transform: skew(-15deg);
+-webkit-transform: skew(-15deg);
+-moz-transform: skew(-15deg);
+-o-transform: skew(-15deg);
+background: #ccc;
+text-align:center;
+color:#fff;
+font-size:20px;
+line-height:5.2;
+margin-left: -5px;
+}
+.main-event-foot-left {
+width: $full;
+height: 40px;
+transform: skew(15deg);
+-webkit-transform: skew(15deg);
+-moz-transform: skew(15deg);
+-o-transform: skew(15deg);
+background: #ccc;
+text-align:center;
+color:#fff;
+font-size:20px;
+line-height:5.2;
+margin-left: 5px;
+}
+.main-event-left {
+background: #e9ecef;
+min-height: 150px;
+width: $full;
+padding: $m_big;
+}
