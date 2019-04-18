@@ -18,17 +18,23 @@
 	<!-- end featured event loop -->
 </main>
 <section class="container">
-	<h2 class="text-center text-white mt-4">More Events:</h2>
+	<h2 class="text-center text-white mt-4 mb-4">More Events:</h2>
 	<!-- event loop here all other events minus 2 for above -->
-	<div class="row mb-5">
-		<div class="col-sm-2 event-date">
-			<p>Date Here</p>
+	<div class="row mb-5 text-center">
+		<div class="col-md-4 event-img">
+			<img class="img-fluid" src="<?php echo get_template_directory_uri();?>/assets/img/example-show01.jpg" alt="Stuff about Stuff" />
 		</div>
-		<div class="col-sm-6 event-info">
-			<p>Event Info Here...</p>
+		<div class="col-md-6 event-info">
+			<h3 class="text-uppercase">Baheed and the Benghazi's</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget mollis odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam ac magna laoreet, pharetra felis id, aliquam turpis. Proin urna neque, ultricies ut posuere hendrerit, mollis non tortor.</p>
+			<button class="btn btn-info">More Info</button>
 		</div>
-		<div class="col-sm-4 event-img">
-			<p>Event Image Here...</p>
+		
+		<div class="col-md-2 event-date">
+			<span class="month">Sept</span>
+			<br />
+			<span class="day">13th</span>
+			<span class="time"><small>7:00pm</small></span>
 		</div>
 		<div class="event-foot"></div>
 	</div>
