@@ -1,48 +1,50 @@
 <main class="container-fluid">
 	<h1 class="text-center text-white mt-4">The Rockshop Presents:</h1>
-	<!-- featured event loop here == 2 most recent events upcoming -->
 	<div class="row">
 		<div class="col-lg-6 pr-4">
+			<?php $my_query = new WP_Query( 'cat=0&posts_per_page=1' ); while ( $my_query->have_posts() ) : $my_query->the_post(); $do_not_duplicate[] = $post->ID; ?>
 			<div class="main-event-left mt-4">
-				<h2 class="text-uppercase text-center text-white pb-1" style="background: #666;">Stee Bevins Plays With Horns</h2>
+				<h2 class="text-uppercase text-center text-white pb-1" style="background: #666;"><?php the_title(); ?></h2>
 				<div class="col-lg-12 main-event-date">
-					<p class="text-center">TONIGHT {{date}}</p>
+					<div class="text-center"><?php echo get_post_meta($post->ID, 'event_date', true); ?></div>
 				</div>
 				<div class="row">
 					<div class="col-lg-5 main-event-img">
-						<p>Image Here</p>
+						<?php the_post_thumbnail( 'full' ); ?>
 					</div>
 					<div class="col-lg-7 main-event-desc">
-						<p>Event excerpt here</p>
+						<?php the_excerpt(); ?>
 					</div>
 				</div>
 			</div>
 			<div class="main-event-foot-left"></div>
 		</div>
+		<?php endwhile; ?>
 		<div class="col-lg-6 pl-4">
+			<?php $my_query = new WP_Query( 'cat=0&posts_per_page=1&offset=-1' ); while ( $my_query->have_posts() ) : $my_query->the_post(); $do_not_duplicate[] = $post->ID; ?>
 			<div class="main-event-right mt-4">
-				<h2 class="text-uppercase text-center text-white pb-1" style="background: #666;">Victor Cruzo and John Nuzzo</h2>
+				<h2 class="text-uppercase text-center text-white pb-1" style="background: #666;"><?php the_title(); ?></h2>
 				<div class="col-lg-12 main-event-date">
-					<p class="text-center">TOMORROW NIGHT {{date}}</p>
+					<div class="text-center"><?php echo get_post_meta($post->ID, 'event_date', true); ?></div>
 				</div>
 				<div class="row">
 					<div class="col-lg-5 main-event-img">
-						<p>Image Here</p>
+						<?php the_post_thumbnail( 'full' ); ?>
 					</div>
 					<div class="col-lg-7 main-event-desc">
-						<p>Event excerpt here</p>
+						<?php the_excerpt(); ?>
 					</div>
 				</div>
 			</div>
 			<div class="main-event-foot-right"></div>
 		</div>
+		<?php endwhile; ?>
 	</div>
-	<!-- end featured event loop -->
 </main>
 <section class="container">
 	<h2 class="text-center text-white mt-4 mb-4">Coming Soon:</h2>
-	<!-- event loop here all other events minus 2 for above -->
 	<div class="row mb-5 text-center">
+		<?php $my_query = new WP_Query( 'cat=0&posts_per_page=10&offset=-2' ); while ( $my_query->have_posts() ) : $my_query->the_post(); $do_not_duplicate[] = $post->ID; ?>
 		<div class="col-md-2 event-date">
 			<span class="month">Sept</span>
 			<br />
@@ -51,14 +53,13 @@
 			<span class="time"><small>7:00pm</small></span>
 		</div>
 		<div class="col-md-4 event-img">
-			<img class="img-fluid" src="<?php echo get_template_directory_uri();?>/assets/img/example-show01.jpg" alt="Stuff about Stuff" />
+			<?php the_post_thumbnail( 'full' ); ?>
 		</div>
 		<div class="col-md-6 event-info pb-3">
-			<h3 class="text-uppercase">Baheed and the Benghazi's</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget mollis odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam ac magna laoreet, pharetra felis id, aliquam turpis. Proin urna neque, ultricies ut posuere hendrerit, mollis non tortor.</p>
-			<button class="btn btn-info btn-block">More Info</button>
-		</div>
-		<div class="event-foot"></div>
+			<h3 class="text-uppercase"><?php the_title(); ?></h3>
+			<?php the_excerpt(); ?>
+		</div>	
+		<div class="event-foot mb-4"></div>
+	<?php endwhile; ?>
 	</div>
-	<!-- end event loop -->
 </section>
