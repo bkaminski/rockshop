@@ -1,8 +1,8 @@
 <main class="container-fluid">
 	<h1 class="text-center text-white mt-4">The Rockshop Presents:</h1>
 	<div class="row">
-		<div class="col-lg-6 pr-4">
-			<?php $my_query = new WP_Query( 'cat=0&posts_per_page=1' ); while ( $my_query->have_posts() ) : $my_query->the_post(); $do_not_duplicate[] = $post->ID; ?>
+		<div class="col-md-6 pr-4">
+			<?php $my_query = new WP_Query( 'cat=4&posts_per_page=1' ); while ( $my_query->have_posts() ) : $my_query->the_post(); $do_not_duplicate[] = $post->ID; ?>
 			<div class="main-event-left mt-4">
 				<h2 class="text-uppercase text-center text-white pb-1" style="background: #666;"><?php the_title(); ?></h2>
 				<div class="col-lg-12 main-event-date">
@@ -20,8 +20,8 @@
 			<div class="main-event-foot-left"></div>
 		</div>
 		<?php endwhile; ?>
-		<div class="col-lg-6 pl-4">
-			<?php $my_query = new WP_Query( 'cat=0&posts_per_page=1&offset=-1' ); while ( $my_query->have_posts() ) : $my_query->the_post(); $do_not_duplicate[] = $post->ID; ?>
+		<div class="col-md-6 pl-4">
+			<?php $my_query = new WP_Query( 'cat=5&posts_per_page=1' ); while ( $my_query->have_posts() ) : $my_query->the_post(); $do_not_duplicate[] = $post->ID; ?>
 			<div class="main-event-right mt-4">
 				<h2 class="text-uppercase text-center text-white pb-1" style="background: #666;"><?php the_title(); ?></h2>
 				<div class="col-lg-12 main-event-date">
@@ -44,7 +44,7 @@
 <section class="container">
 	<h2 class="text-center text-white mt-4 mb-4">Coming Soon:</h2>
 	<div class="row mb-5 text-center">
-		<?php $my_query = new WP_Query( 'cat=0&posts_per_page=10&offset=-2' ); while ( $my_query->have_posts() ) : $my_query->the_post(); $do_not_duplicate[] = $post->ID; ?>
+		<?php $my_query = new WP_Query( 'cat=3&posts_per_page=10' ); while ( $my_query->have_posts() ) : $my_query->the_post(); $do_not_duplicate[] = $post->ID; ?>
 		<div class="col-md-2 event-date">
 			<span class="month">Sept</span>
 			<br />
@@ -59,7 +59,7 @@
 			<h3 class="text-uppercase"><?php the_title(); ?></h3>
 			<?php the_excerpt(); ?>
 		</div>	
-		<div class="event-foot mb-4"></div>
+		<div class="event-foot mb-5"></div>
 	<?php endwhile; ?>
 	</div>
 </section>
