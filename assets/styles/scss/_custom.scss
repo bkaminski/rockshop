@@ -17,15 +17,14 @@ position: absolute;
 #video-container {
 top:0%;
 left:0%;
-height:100%;
-width:100%;
+@extend %full-height-width;
 overflow: hidden;
 }
 video {
 position:absolute;
 }
 video.fillWidth {
-width: 100%;
+width:  $full;
 margin-top: -500px;
 }
 .logo-image {
@@ -53,8 +52,7 @@ padding: 0px;
 border-bottom: 2px solid #000;
 }
 .event-img img {
-width: 100%;
-height: 100%;
+@extend %full-height-width;
 object-fit: cover;
 overflow: hidden;
 }
@@ -85,9 +83,7 @@ background: #e9ecef;
 text-align: center;
 color:#fff;
 margin-left: -10px;
--moz-box-shadow: inset 0 0 10px #000000;
--webkit-box-shadow: inset 0 0 10px #000000;
-box-shadow: inset 0 0 10px #000000;
+@extend %shadow-inset;
 }
 .main-event-right {
 background: #e9ecef;
@@ -106,9 +102,7 @@ background: #ccc;
 text-align:center;
 color:#fff;
 margin-left: -5px;
--moz-box-shadow: inset 0 0 10px #000000;
--webkit-box-shadow: inset 0 0 10px #000000;
-box-shadow: inset 0 0 10px #000000;
+@extend %shadow-inset;
 }
 .main-event-foot-left {
 width: $full;
@@ -121,9 +115,7 @@ background: #ccc;
 text-align:center;
 color:#fff;
 margin-left: 5px;
--moz-box-shadow: inset 0 0 10px #000000;
--webkit-box-shadow: inset 0 0 10px #000000;
-box-shadow: inset 0 0 10px #000000;
+@extend %shadow-inset;
 }
 .main-event-left {
 background: #e9ecef;
@@ -160,10 +152,12 @@ margin-right: 15px;
 margin-right: -15px;
 }}
 .main-event-img img {
-width: 100%;
-height: 100%;
+@extend %full-height-width;
 object-fit: cover;
 overflow: hidden;
+}
+.main-event-title {
+padding: 5px;
 }
 .rockshop-footer {
 min-height: 200px;
