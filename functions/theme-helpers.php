@@ -24,18 +24,24 @@ function tags_support_all() {
 }
 
 //Widgetize Build
-add_action( 'widgets_init', 'the_rockshop_widgets_init' );
-function the_rockshop_widgets_init() {
 register_sidebar( array(
-    'name' => __( 'Future Events', 'the_rockshop' ),
-    'id' => 'sidebar-1',
+    'name' => __( 'Footer Left Widget', 'the_rockshop' ),
+    'id' => 'rockshop-left-footer',
     'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'theme-slug' ),
-    'before_widget' => '<li id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</li>',
-    'before_title'  => '<h2 class="widgettitle">',
+    'before_widget' => '<div>',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h2 class="text-white">',
     'after_title'   => '</h2>',
     ) );
-}
+register_sidebar( array(
+    'name' => __( 'Footer Right Widget', 'the_rockshop' ),
+    'id' => 'rockshop-right-footer',
+    'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'theme-slug' ),
+    'before_widget' => '<div>',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h2 class="text-white">',
+    'after_title'   => '</h2>',
+    ) );
 
 //DISABLE EMOJI BLOAT
 function disable_wp_emoji() {
@@ -100,7 +106,12 @@ add_filter( 'script_loader_src', 'vc_remove_wp_ver_css_js', 9999 );
 function excerpt_read_more_link($output)
 {
     global $post;
-    return $output . '<a class="btn btn-info text-uppercase mb-4" href="' . get_permalink() . '">More Info <i class="fas fa-angle-double-right fa-fw fa-lg"></i></a>';
+    return $output . '<a class="btn btn-info btn-lg text-uppercase mb-4" href="' . get_permalink() . '">More Info <i class="fas fa-angle-double-right fa-fw fa-lg"></i></a>';
 }
 add_filter('the_excerpt', 'excerpt_read_more_link');
 
+// Register Custom Navigation Walker
+require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+register_nav_menus( array(
+    'primary' => __( 'Rockshop Menu', 'the_rockshop' ),
+) );

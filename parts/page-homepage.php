@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-lg-12 pr-4">
 			<?php query_posts('post_status=future&posts_per_page=1&order=ASC&cat=3'); while ( have_posts() ) : the_post(); ?>
-			<div class="main-event-left mt-4">
+			<div class="main-event mt-4">
 				<h2 class="text-uppercase text-center text-white pb-4 pt-4 main-event-title display-5" style="background: #ff5a00;"><?php the_title("Next Event: ", ""); ?></h2>
 				<div class="col-lg-12 main-event-date">
 					<div class="text-center text-uppercase pt-1 pb-1">
@@ -26,7 +26,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="main-event-foot-left"></div>
+			<div class="main-event-footer"></div>
 		</div>
 		<?php endwhile; ?>
 		<?php wp_reset_query(); ?>

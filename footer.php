@@ -1,15 +1,20 @@
-		<footer class="rockshop-footer">
+		<footer class="rockshop-footer pt-3">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
-						<h3 class="text-white">Test 1</h3>
+						<?php dynamic_sidebar( 'rockshop-left-footer' ); ?>
 					</div>
 					<div class="col-md-6">
-						<h3 class="text-white">Test 2</h3>
+						<?php dynamic_sidebar( 'rockshop-right-footer' ); ?>
 					</div>
 				</div>
 			</div>
 		</footer>
+		<div class="col-md-12">
+			<div class="text-center copyright">
+				<small>Copyright &copy; <?php echo date('Y'); ?> The Rockshop</small>
+			</div>
+		</div>
 	<?php wp_footer(); ?>
 	</body>
 </html>
