@@ -133,9 +133,9 @@ padding: 0px;
 margin-left: 15px;
 margin-right: 15px;
 border-top: 2px solid #ff5a00;
+overflow: hidden;
 @include breakpoint (md) {
 margin-right: -15px;
-overflow: hidden;
 }}
 .main-event-img img {
 @extend %full-height-width;
