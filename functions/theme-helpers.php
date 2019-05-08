@@ -23,6 +23,20 @@ function tags_support_all() {
     register_taxonomy_for_object_type('post_tag', 'page');
 }
 
+//Widgetize Build
+add_action( 'widgets_init', 'the_rockshop_widgets_init' );
+function the_rockshop_widgets_init() {
+register_sidebar( array(
+    'name' => __( 'Future Events', 'the_rockshop' ),
+    'id' => 'sidebar-1',
+    'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'theme-slug' ),
+    'before_widget' => '<li id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</li>',
+    'before_title'  => '<h2 class="widgettitle">',
+    'after_title'   => '</h2>',
+    ) );
+}
+
 //DISABLE EMOJI BLOAT
 function disable_wp_emoji() {
 
@@ -89,3 +103,4 @@ function excerpt_read_more_link($output)
     return $output . '<a class="btn btn-info text-uppercase mb-4" href="' . get_permalink() . '">More Info <i class="fas fa-angle-double-right fa-fw fa-lg"></i></a>';
 }
 add_filter('the_excerpt', 'excerpt_read_more_link');
+

@@ -50,6 +50,7 @@ background: #999;
 min-height: 200px;
 padding: 0px;
 border-bottom: 2px solid #000;
+overflow: hidden;
 }
 .event-img img {
 @extend %full-height-width;
@@ -61,7 +62,6 @@ background: #fff;
 background-image: url('../img/funky-lines.png');
 background-repeat: repeat;
 min-height: 100px;
-border-bottom: 2px solid;
 font-weight: bold;
 text-shadow: 2px 2px 2px;
 text-transform: uppercase;
@@ -83,26 +83,7 @@ background: #e9ecef;
 text-align: center;
 color:#fff;
 margin-left: -10px;
-@extend %shadow-inset;
-}
-.main-event-right {
-background: #e9ecef;
-min-height: 250px;
-width: $full;
-border-bottom: 2px solid;
-}
-.main-event-foot-right {
-width: $full;
-height: 40px;
-transform: skew(-15deg);
--webkit-transform: skew(-15deg);
--moz-transform: skew(-15deg);
--o-transform: skew(-15deg);
-background: #ccc;
-text-align:center;
-color:#fff;
-margin-left: -5px;
-@extend %shadow-inset;
+@extend %shadow-inset; 
 }
 .main-event-foot-left {
 width: $full;
@@ -113,7 +94,7 @@ transform: skew(15deg);
 -o-transform: skew(15deg);
 background: #ccc;
 text-align:center;
-color:#fff;
+color: #fff;
 margin-left: 5px;
 @extend %shadow-inset;
 }
@@ -124,17 +105,17 @@ width: $full;
 border-bottom: 2px solid;
 }
 .main-event-date {
-background: #d4edda;
+background: #fff;
 font-weight: bold;
+color: #333;
 margin-top: -8px;
-font-size: 18px;
+font-size: 24px;
 min-height: 35px;
-border-top: 2px solid #c3e6cb;
 }
 .main-event-desc {
 background-image: url('../img/funky-lines.png');
 background-repeat: repeat;
-border-top: 2px solid #c3e6cb;
+border-top: 2px solid #ff5a00;
 min-height: 200px;
 margin-top: 0px;
 margin-left: 15px;
@@ -142,14 +123,16 @@ margin-right: 15px;
 @include breakpoint (md) {
 margin-left: inherit;
 margin-right: inherit;
+font-size: 24px;
 }}
 .main-event-img {
-border-top: 2px solid #c3e6cb;
 padding: 0px;
 margin-left: 15px;
 margin-right: 15px;
+border-top: 2px solid #ff5a00;
 @include breakpoint (md) {
 margin-right: -15px;
+overflow: hidden;
 }}
 .main-event-img img {
 @extend %full-height-width;
@@ -163,4 +146,13 @@ padding: 5px;
 min-height: 200px;
 width: $full;
 background: #777;
+}
+.zoom {
+padding: 0px;
+background-color: transparent;
+transition: transform .3s;
+margin: 0 auto;
+}
+.zoom:hover {
+transform: scale(1.2);
 }
