@@ -13,22 +13,10 @@ position: relative;
 width: $full;
 min-height: 300px;
 background: #000;
-}
-#video-container {
-position: absolute;
-}
-#video-container {
-top:0%;
-left:0%;
-@extend %full-height-width;
-overflow: hidden;
-}
-video {
-position:absolute;
-}
-video.fillWidth {
-width:  $full;
-margin-top: -500px;
+background-image: url('../img/rockshop-header-img.jpg');
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
 }
 .logo-image {
 position: relative;
