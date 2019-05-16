@@ -35,7 +35,7 @@
 <section class="container">
 	<h2 class="text-center text-white mt-4 mb-4">Coming Soon:</h2>
 	<div class="row mb-5 text-center">
-		<?php query_posts('post_status=future&offset=-1&order=ASC'); while ( have_posts() ) : the_post(); ?>
+		<?php query_posts('post_status=future&offset=-1&order=ASC&posts_per_page=5'); while ( have_posts() ) : the_post(); ?>
 		<div class="col-md-2 event-date">
 			<span class="month"><?php echo get_the_date('M'); ?></span>
 			<br />

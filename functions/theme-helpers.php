@@ -1,7 +1,4 @@
 <?php
-//GUTENBERG SUPPORT
-add_theme_support( 'align-wide' );
-add_theme_support( 'responsive-embeds' );
 
 //HTML 5 SUPPORT
 add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
@@ -82,16 +79,7 @@ function prefix_output_callback($buffer) {
 	return preg_replace( "%[ ]type=[\'\"]text\/(javascript|css)[\'\"]%", '', $buffer );
 }
 
-//INCLUDE TAGS IN SEARCH QUERIES
-function tags_support_query($wp_query)
-{
-    if ($wp_query->get('tag'))
-        $wp_query->set('post_type', 'any');
-}
 
-//TAG HOOKS
-add_action('init', 'tags_support_all');
-add_action('pre_get_posts', 'tags_support_query');
 
 // REMOVE WP VERSION PARAM FROM ENQUEUED SCRIPTS AND CSS
 function vc_remove_wp_ver_css_js( $src ) {

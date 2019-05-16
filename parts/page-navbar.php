@@ -16,7 +16,7 @@
 				'walker'            => new WP_Bootstrap_Navwalker(),
 			));
 		?>
-		<form class="form-inline my-2 my-lg-0">
+		<form class="form-inline my-2 my-lg-0" method="get" id="searchform" action="<?php echo home_url() ; ?>/" required>
 			<input class="form-control" type="text" placeholder="Search this site" value="" name="s" id="s" maxlength="33" required="required" />
 			<div class="input-group-append">
 				<button class="btn btn-info my-sm-0" type="submit">

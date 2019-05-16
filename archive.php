@@ -27,7 +27,7 @@ get_header(); ?>
    				
    					<ul>
    						<a href="<?php the_permalink(); ?>">
-   							<li class="h4"><?php the_title(); ?> - <?php the_date(); ?></li>
+   							<li class="h5"><?php the_title(); ?> - <?php the_date(); ?></li>
    						</a>
    					</ul>
 			

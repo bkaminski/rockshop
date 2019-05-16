@@ -12,7 +12,7 @@
 		</footer>
 		<div class="col-md-12">
 			<div class="text-center copyright">
-				<small>Copyright &copy; <?php echo date('Y'); ?> The Rockshop</small>
+				<small>Copyright &copy; <?php echo date('Y'); ?> The Rockshop  |  <a href="privacy-policy/">Privacy Policy</a></small>
 			</div>
 		</div>
 	<?php wp_footer(); ?>
