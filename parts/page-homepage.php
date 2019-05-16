@@ -1,5 +1,5 @@
 <main class="container-fluid">
-	<h1 class="text-center text-white mt-4">The Rockshop Presents:</h1>
+	<h1 class="text-center text-white mt-4 display-4">The Rockshop Presents:</h1>
 	<div class="row">
 		<div class="col-lg-12 pr-4">
 			<?php query_posts('post_status=future&posts_per_page=1&order=ASC&cat=3'); while ( have_posts() ) : the_post(); ?>
