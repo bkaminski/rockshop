@@ -13,7 +13,7 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-5 main-event-img">
-						<?php the_post_thumbnail( 'full', array('class' => 'zoom') ); ?>
+						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'full', array('class' => 'zoom') ); ?></a>
 							
 					</div>
 					<div class="col-lg-7 main-event-desc">
@@ -44,7 +44,7 @@
 			<span class="time"><small><?php echo get_the_date('g:i a'); ?></small></span>
 		</div>
 		<div class="col-md-4 event-img">
-			<?php the_post_thumbnail( 'full', array('class' => 'zoom') ); ?>
+			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'full', array('class' => 'zoom') ); ?></a>
 				
 		</div>
 		<div class="col-md-6 event-info pb-3">
