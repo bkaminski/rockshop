@@ -79,8 +79,6 @@ function prefix_output_callback($buffer) {
 	return preg_replace( "%[ ]type=[\'\"]text\/(javascript|css)[\'\"]%", '', $buffer );
 }
 
-
-
 // REMOVE WP VERSION PARAM FROM ENQUEUED SCRIPTS AND CSS
 function vc_remove_wp_ver_css_js( $src ) {
     if ( strpos( $src, 'ver=' ) )
@@ -159,4 +157,19 @@ function rockshop_pagination($pages = '', $range = 1)
 }
 //end pagination
 
+//Change WP Emails and email address away from "WordPress" as sender
+function rockshop_mail_name( $email ){
+  return 'The Rockshop'; // new email name from sender.
+}
+add_filter( 'wp_mail_from_name', 'rockshop_mail_name' );
+function rockshop_mail_from ($email ){
+  return 'info@bnbrockshop.com'; // new email address from sender.
+}
+add_filter( 'wp_mail_from', 'rockshop_mail_from' );
 
+// ensure all tags are included in queries
+function tags_support_query($wp_query)
+{
+    if ($wp_query->get('tag'))
+        $wp_query->set('post_type', 'any');
+}

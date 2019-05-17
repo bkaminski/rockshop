@@ -1,5 +1,7 @@
 <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
-	<a class="navbar-brand" href="<?php echo get_home_url(); ?>">Home</a>
+	<a class="navbar-brand" href="<?php echo get_home_url(); ?>">
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/favicon.png" class="img-fluid">
+	</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
