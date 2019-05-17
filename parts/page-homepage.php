@@ -2,7 +2,7 @@
 	<h1 class="text-center text-white mt-4 display-4">The Rockshop Presents:</h1>
 	<div class="row">
 		<div class="col-lg-12 pr-4">
-			<?php query_posts('post_status=future&posts_per_page=1&order=ASC&cat=3'); while ( have_posts() ) : the_post(); ?>
+			<?php query_posts('post_status=future&posts_per_page=1&order=ASC'); while ( have_posts() ) : the_post(); ?>
 			<div class="main-event mt-4">
 				<h2 class="text-uppercase text-center text-white pb-4 pt-4 main-event-title display-5" style="background: #ff5a00;"><?php the_title("Next Event: ", ""); ?></h2>
 				<div class="col-lg-12 main-event-date">

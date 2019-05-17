@@ -107,7 +107,7 @@ register_nav_menus( array(
 //begin pagination
 function rockshop_pagination($pages = '', $range = 1)
 {
-    $showitems = ($range * 2) + 1;
+    $showitems = ($range * 1) + 1;
     
     global $paged;
     if (empty($paged))
@@ -158,4 +158,5 @@ function rockshop_pagination($pages = '', $range = 1)
     }
 }
 //end pagination
+
 

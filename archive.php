@@ -7,7 +7,7 @@ get_header(); ?>
 	<h1 class="mb-3">Past Rockshop Events</h1>
 		<?php
 			$args = array (
-   				'cat' => '3',
+   				'cat' => '1',
    				'paged' => get_query_var('paged'), 
    				'order' => 'DESC', 
    				'paged' => $paged, 
@@ -34,6 +34,8 @@ get_header(); ?>
 			<?php endwhile; else : ?>
 				<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
 			<?php endif; ?>
-			<?php echo rockshop_pagination(); ?>
+      <div class="col-md-12 pt-3 pb-3">
+        <?php echo rockshop_pagination(); ?>
+      </div>
 </div>
 <?php get_footer(); ?>
