@@ -34,5 +34,6 @@ get_header(); ?>
 			<?php endwhile; else : ?>
 				<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
 			<?php endif; ?>
+			<?php echo rockshop_pagination(); ?>
 </div>
 <?php get_footer(); ?>
