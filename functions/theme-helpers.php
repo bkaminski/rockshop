@@ -173,3 +173,31 @@ function tags_support_query($wp_query)
     if ($wp_query->get('tag'))
         $wp_query->set('post_type', 'any');
 }
+
+add_action( 'pre_get_posts', 'se338152_future_post_tag_and_search' );
+function se338152_future_post_tag_and_search( $query )
+{
+    // apply changes only for search and tag archive
+    if ( ! ( $query->is_main_query() && (is_tag() || is_search()) ) )
+        return;
+
+    $status = $query->get('post_status');
+    if ( empty($status) )
+        $status = ['publish'];
+    if ( !is_array($status) )
+        $status = (array)$status;
+    $status[] = 'future';
+
+    $query->set('post_status', $status);
+}
+
+function show_future_posts($posts)
+{
+   global $wp_query, $wpdb;
+   if(is_single() && $wp_query->post_count == 0)
+   {
+      $posts = $wpdb->get_results($wp_query->request);
+   }
+   return $posts;
+}
+add_filter('the_posts', 'show_future_posts');

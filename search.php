@@ -18,15 +18,17 @@
 				</h1>
 					<?php the_excerpt(); ?>
 				
-				<hr class="shadow news-pg-hr" />
+				<hr />
 			</main>
 		</div>
 		<?php endwhile; else : ?>
 			<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
 		<?php endif; ?>
 		<div class="col">
-			<?php //echo rockshop_pagination(); ?>
+			 <?php echo rockshop_pagination(); ?>
 		</div>
+		<?php wp_reset_query(); ?>
+		
 	</div>
 </div>
 <?php get_footer(); ?>
