@@ -24,6 +24,7 @@
    <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+    <div id="fb-root"></div>
     <?php get_template_part( 'parts/page', 'header'); ?>
     <?php get_template_part( 'parts/page', 'navbar' ); ?>
         
