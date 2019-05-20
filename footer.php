@@ -1,6 +1,6 @@
 		<footer class="rockshop-footer pt-3">
 			<div class="container">
-				<div class="row">
+				<div class="row pb-3">
 					<div class="col-md-6">
 						<?php dynamic_sidebar( 'rockshop-left-footer' ); ?>
 					</div>
@@ -12,7 +12,7 @@
 		</footer>
 		<div class="col-md-12">
 			<div class="text-center copyright">
-				<small>Copyright &copy; <?php echo date('Y'); ?> The Rockshop  |  <a style="color:#212529;" href="privacy-policy/">Privacy Policy</a></small>
+				<small>Copyright &copy; <?php echo date('Y'); ?> The Rockshop  |  <a style="color:#212529;" href="">Privacy Policy</a></small>
 			</div>
 		</div>
 	<?php wp_footer(); ?>

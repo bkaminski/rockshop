@@ -174,7 +174,6 @@ function tags_support_query($wp_query)
         $wp_query->set('post_type', 'any');
 }
 
-//Include Scheduled Posts in Search and Tag Archive
 add_action( 'pre_get_posts', 'se338152_future_post_tag_and_search' );
 function se338152_future_post_tag_and_search( $query )
 {
@@ -192,7 +191,6 @@ function se338152_future_post_tag_and_search( $query )
     $query->set('post_status', $status);
 }
 
-//Publicly Visible Future Posts
 function show_future_posts($posts)
 {
    global $wp_query, $wpdb;
