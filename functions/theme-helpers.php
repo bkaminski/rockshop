@@ -22,18 +22,18 @@ function tags_support_all() {
 
 //Widgetize Build
 register_sidebar( array(
-'name' => __( 'Footer Left Widget', 'the_rockshop' ),
-'id' => 'rockshop-left-footer',
-'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'theme-slug' ),
+'name' => __( 'Footer Right Widget', 'the_rockshop' ),
+'id' => 'rockshop-right-footer',
+'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'the_rockshop' ),
 'before_widget' => '<div>',
 'after_widget'  => '</div>',
 'before_title'  => '<h3 class="text-white">',
 'after_title'   => '</h3>',
 ));
 register_sidebar( array(
-'name' => __( 'Footer Right Widget', 'the_rockshop' ),
-'id' => 'rockshop-right-footer',
-'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'theme-slug' ),
+'name' => __( 'Footer Left Widget', 'the_rockshop' ),
+'id' => 'rockshop-left-footer',
+'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'the_rockshop' ),
 'before_widget' => '<div>',
 'after_widget'  => '</div>',
 'before_title'  => '<h3 class="text-white">',
