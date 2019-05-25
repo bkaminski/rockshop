@@ -5,7 +5,7 @@ Custom WordPress theme developed exclusively for The Rockshop
 
 The Rockshop is one of Delaware's premiere venues for live entertainment in the Dover area. The purpose of this build was to create a custom WordPress theme that acted as an event calendar.
 
-To do this, I created some custome query loops to use future or scheduled posts as "events". In fact, all posts act as "events" in this build.
+To do this, I created some custom query loops to use future or scheduled posts as "events". In fact, all posts act as "events" in this build.
 
 The cool thing about this theme is that the date after the event passes, it's removed from the homepage loop and placed in the archive loop. Fun stuff!
 
