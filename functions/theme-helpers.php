@@ -15,6 +15,9 @@ add_theme_support('post-thumbnails');
 //ADD RSS/ATOM SUPPORT
 add_theme_support( 'automatic-feed-links' );
 
+//AUTO UPDATE PLUGINS
+add_filter( 'auto_update_plugin', '__return_true' );
+
 //ADD TAG SUPPORT TO PAGES
 function tags_support_all() {
     register_taxonomy_for_object_type('post_tag', 'page');

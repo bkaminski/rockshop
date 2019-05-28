@@ -5,8 +5,10 @@ $(function() {
 	$(".main-event-desc").matchHeight();
 	$(".main-event-title").matchHeight();
 });
+
+//DISALLOW ILLEGAL CHARS IN INPUTS
 $(document).ready(function(){
-  $("#s, #yourName, #yourSubject, #yourMessage, #quiz").keypress(function(e){
+  $("#s, #yourName, #yourSubject, #quiz").keypress(function(e){
     var keyCode = e.which;
     // Not allow special 
     if ( !( (keyCode >= 48 && keyCode <= 57) 
