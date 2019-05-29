@@ -22,7 +22,7 @@
 			<input class="form-control" type="text" placeholder="Search this site" value="" name="s" id="s" maxlength="33" required="required" />
 			<div class="input-group-append">
 				<button class="btn btn-info my-sm-0" type="submit">
-					<i class="fas fa-search fa-lg fa-fw"></i>
+					<i class="fas fa-search fa-fw fa-lg"></i>
 				</button>
 			</div>
 		</form>
