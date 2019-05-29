@@ -1,6 +1,6 @@
 {
   "name": "rockshop",
-  "version": "0.1.1",
+  "version": "1.1.5",
   "description": "Custom WordPress theme for The Rockshop",
   "main": "index.php",
   "scripts": {
@@ -24,5 +24,8 @@
   "homepage": "https://github.com/bkaminski/rockshop#readme",
   "dependencies": {
     "sass": "^1.18.0"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.2"
   }
 }
