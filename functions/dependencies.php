@@ -13,7 +13,7 @@ add_action('wp_enqueue_scripts', 'enqueue_rockshop_scripts');
 
 //LOAD CSS
 function enqueue_rockshop_styles() {
-    wp_enqueue_style('bootstrap-4.3.1', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', array(), null);
-    wp_enqueue_style('rockshop', get_template_directory_uri() . '/assets/styles/rockshopStyles.css', array(), filemtime(get_template_directory() . '/assets/styles/scss'), 'all' );
+    wp_enqueue_style('bootstrap-4.3.1', get_template_directory_uri() . '/assets/styles/bootstrap/bootstrap.min.css');
+    wp_enqueue_style('rockshopStyles', get_template_directory_uri() . '/assets/styles/rockshopStyles.css', array(), filemtime(get_template_directory() . '/assets/styles/scss'), 'all' );
 }
 add_action('wp_enqueue_scripts', 'enqueue_rockshop_styles');
