@@ -204,3 +204,9 @@ function show_future_posts($posts)
    return $posts;
 }
 add_filter('the_posts', 'show_future_posts');
+
+function webp_upload_mimes( $existing_mimes ) {
+  $existing_mimes['webp'] = 'image/webp';
+  return $existing_mimes;
+}
+add_filter( 'mime_types', 'webp_upload_mimes' );
