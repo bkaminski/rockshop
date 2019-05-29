@@ -205,6 +205,7 @@ function show_future_posts($posts)
 }
 add_filter('the_posts', 'show_future_posts');
 
+//ENAMBEL WEBP SUPPORT
 function webp_upload_mimes( $existing_mimes ) {
   $existing_mimes['webp'] = 'image/webp';
   return $existing_mimes;
