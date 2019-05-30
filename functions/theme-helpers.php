@@ -23,7 +23,7 @@ function tags_support_all() {
     register_taxonomy_for_object_type('post_tag', 'page');
 }
 
-//Widgetize Build
+//INIT WIDGETS
 register_sidebar( array(
 'name' => __( 'Footer Right Widget', 'the_rockshop' ),
 'id' => 'rockshop-right-footer',
@@ -64,25 +64,25 @@ add_filter( 'emoji_svg_url', '__return_false' );
 add_action( 'init', 'disable_wp_emoji' );
 function disable_emoji_tinymce( $plugins ) {
 if ( is_array( $plugins ) ) {
-	return array_diff( $plugins, array( 'wpemoji' ) );
+  return array_diff( $plugins, array( 'wpemoji' ) );
 } else {
-	return array();
+  return array();
 }}
 
 //REMOVE THE TYPE ATTRIBUTE FROM JAVASCRIPT FILES
 add_action('wp_loaded', 'prefix_output_buffer_start');
 function prefix_output_buffer_start() { 
-	ob_start("prefix_output_callback"); 
+  ob_start("prefix_output_callback"); 
 }
 add_action('shutdown', 'prefix_output_buffer_end');
 function prefix_output_buffer_end() { 
-	ob_end_flush(); 
+  ob_end_flush(); 
 }
 function prefix_output_callback($buffer) {
-	return preg_replace( "%[ ]type=[\'\"]text\/(javascript|css)[\'\"]%", '', $buffer );
+  return preg_replace( "%[ ]type=[\'\"]text\/(javascript|css)[\'\"]%", '', $buffer );
 }
 
-// REMOVE WP VERSION PARAM FROM ENQUEUED SCRIPTS AND CSS
+//REMOVE WP VERSION PARAM FROM ENQUEUED SCRIPTS AND CSS
 function vc_remove_wp_ver_css_js( $src ) {
     if ( strpos( $src, 'ver=' ) )
         $src = remove_query_arg( 'ver', $src );
@@ -99,15 +99,14 @@ function excerpt_read_more_link($output)
 }
 add_filter('the_excerpt', 'excerpt_read_more_link');
 
-// Register Custom Navigation Walker
+//BOOTSTRAP 4 NAV WALKER
 require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 register_nav_menus( array(
     'primary' => __( 'Rockshop Menu', 'the_rockshop' ),
 ) );
 
-//begin pagination
-function rockshop_pagination($pages = '', $range = 1)
-{
+//ROCKSHOP PAGINATION
+function rockshop_pagination($pages = '', $range = 1) {
     $showitems = ($range * 1) + 1;
     
     global $paged;
@@ -160,7 +159,7 @@ function rockshop_pagination($pages = '', $range = 1)
 }
 //end pagination
 
-//Change WP Emails and email address away from "WordPress" as sender
+//ENSURE EMAIL DELIVERY FROM ROCKSHOP -- NOT WORDPRESS AS SENDER
 function rockshop_mail_name( $email ){
   return 'The Rockshop'; // new email name from sender.
 }
@@ -170,13 +169,14 @@ function rockshop_mail_from ($email ){
 }
 add_filter( 'wp_mail_from', 'rockshop_mail_from' );
 
-// ensure all tags are included in queries
+//TAGS IN SEARCH QUERIES
 function tags_support_query($wp_query)
 {
     if ($wp_query->get('tag'))
         $wp_query->set('post_type', 'any');
 }
 
+//DISPLAY FUTURE POSTS IN TAGS AND SEARCH
 add_action( 'pre_get_posts', 'se338152_future_post_tag_and_search' );
 function se338152_future_post_tag_and_search( $query )
 {
@@ -194,6 +194,7 @@ function se338152_future_post_tag_and_search( $query )
     $query->set('post_status', $status);
 }
 
+//DISPLAY FUTURE POSTS
 function show_future_posts($posts)
 {
    global $wp_query, $wpdb;
@@ -205,7 +206,7 @@ function show_future_posts($posts)
 }
 add_filter('the_posts', 'show_future_posts');
 
-//ENAMBEL WEBP SUPPORT
+//ALLOW WEBP MIME-TYPE UPLOADS
 function webp_upload_mimes( $existing_mimes ) {
   $existing_mimes['webp'] = 'image/webp';
   return $existing_mimes;
